@@ -3,14 +3,11 @@ from telebot import types
 from config import token
 
 
-#Vigbo_HR_bot
-
 bot = telebot.TeleBot(token)
 
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    #bot.send_message(message.chat.id, "Привет! Давай познакомимся! Как тебя зовут?")
     bot.send_message(message.from_user.id, 'Привет, давай познакомимся! Как тебя зовут?')
     bot.register_next_step_handler(message, reg_name)
 
