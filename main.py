@@ -8,12 +8,6 @@ from config import token
 bot = telebot.TeleBot(token)
 
 
-name = str
-#how_are_you = str
-#age = int
-
-
-
 @bot.message_handler(commands=['start'])
 def start(message):
     #bot.send_message(message.chat.id, "Привет! Давай познакомимся! Как тебя зовут?")
@@ -22,8 +16,6 @@ def start(message):
 
 
 def reg_name(message):
-    global name
-    name = message.text
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
     markup.row('Прекрасно', 'Нормально')
     #markup.row('Нормально')
